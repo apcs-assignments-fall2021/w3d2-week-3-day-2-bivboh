@@ -7,8 +7,12 @@ public class MyMain {
     //     isLetter('?') => false
     //     isLetter('4') => false
     public static boolean isLetter(char c) {
-        // REPLACE WITH YOUR CODE HERE
-        return false;
+        if (c >= 97 && c < 123 || c >= 65 && c < 91){
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     // This method is given two chars as input, c1 and c2
@@ -21,7 +25,10 @@ public class MyMain {
     //                             'f'
     //                             'g'
     public static void printChars(char c1, char c2) {
-        // REPLACE WITH YOUR CODE HERE
+        while (c1 <= c2){
+            System.out.println(c1);
+            c1 += 1;
+        }
     }
 
     // Given a char ch, and returns the next letter in the alphabet.
@@ -34,8 +41,20 @@ public class MyMain {
     //     nextLetter('a') => 'b'
     //     nextLetter('z') => 'a'
     public static char nextLetter(char ch) {
-        // REPLACE WITH YOUR CODE HERE
-        return ' ';
+
+        if (ch >= 97 && ch < 122){
+            ch = (char) (ch+1);
+        }
+        else if (ch == 122){
+            ch = 'a';
+        }
+        else if (ch >= 65 && ch < 90){
+            ch = (char) (ch+1);
+        }
+        else if (ch == 90){
+            ch = 'A';
+        }
+        return ch;
     }
 
     // Similar to the previous example, the method is given a char ch. However, the method
@@ -46,8 +65,13 @@ public class MyMain {
     //     nextNextNextLetter('a') => 'd'
     //     nextNextNextLetter('z') => 'c'
     public static char nextNextNextLetter(char ch) {
-        // REPLACE WITH YOUR CODE HERE
-        return ' ';
+        if (ch >= 65 && ch <= 88 || ch >= 97 && ch <= 120){
+            ch = (char) (ch+3);
+        }
+        else{
+            ch = (char) (ch-23);
+        }
+        return ch;
     }
 
 
